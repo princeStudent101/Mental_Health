@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f8f5">
+    <title>Mindful — Student wellbeing check-in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Mindful home">
+        <span class="brand-mark" aria-hidden="true">m</span>
+        <span>mindful<span class="brand-dot">.</span></span>
+      </a>
+      <span class="topbar-note"><span class="status-dot"></span> A little space for you</span>
+    </header>
+
+    <main class="page-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="sparkle" aria-hidden="true">✳</span> STUDENT WELLBEING CHECK-IN</p>
+        <h1 id="page-title">Your habits.<br><span>Your wellbeing.</span></h1>
+        <p class="intro-copy">A gentle, data-informed check-in on the everyday patterns that shape student life. Take a breath and answer what feels right.</p>
+        <div class="privacy-note"><span aria-hidden="true">🔒</span> Your answers are used only to generate this prediction.</div>
+      </section>
+
+      <section class="form-card" aria-label="Wellbeing check-in form">
+        <div class="card-heading">
+          <div>
+            <p class="step-label">YOUR CHECK-IN <span>·</span> ABOUT 2 MIN</p>
+            <h2>Tell us a little about you</h2>
+          </div>
+          <div class="progress-icon" aria-hidden="true">✦</div>
+        </div>
+
+        <form id="checkin-form">
+          <fieldset>
+            <legend><span class="section-number">01</span> A bit about you</legend>
+            <div class="field-grid">
+              <label class="field">
+                <span>Age</span>
+                <input name="age" type="number" min="10" max="100" value="20" required>
+                <small>Between 10 and 100</small>
+              </label>
+              <label class="field">
+                <span>Gender</span>
+                <select name="gender" required>
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Country</span>
+                <select name="Country" required>
+                  <option>India</option>
+                  <option>USA</option>
+                  <option>Canada</option>
+                  <option>Australia</option>
+                  <option>UK</option>
+                  <option>Germany</option>
+                  <option>Mexico</option>
+                  <option>Turkey</option>
+                  <option>France</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Academic level</span>
+                <select name="academic_level" required>
+                  <option>Undergraduate</option>
+                  <option>High School</option>
+                  <option>Graduate</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="section-number">02</span> Your social media habits</legend>
+            <div class="field-grid">
+              <label class="field">
+                <span>Most-used platform</span>
+                <select name="most_used_platform" required>
+                  <option>Instagram</option>
+                  <option>Facebook</option>
+                  <option>Twitter</option>
+                  <option>Snapchat</option>
+                  <option>TikTok</option>
+                  <option>YouTube</option>
+                  <option>Reddit</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Main reason you use it</span>
+                <select name="purpose_of_use" required>
+                  <option>Networking</option>
+                  <option>Entertainment</option>
+                  <option>News</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Daily social media use <em>hours</em></span>
+                <input name="avg_daily_usage_hours" type="number" min="2" max="24" step="0.5" value="4" required>
+                <small>Between 2 and 24 hours</small>
+              </label>
+              <label class="field">
+                <span>Daily phone unlocks</span>
+                <input name="daily_unlocks" type="number" min="1" max="100" value="40" required>
+                <small>Between 1 and 100</small>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="section-number">03</span> The everyday essentials</legend>
+            <div class="field-grid">
+              <label class="field">
+                <span>Study time <em>hours / day</em></span>
+                <input name="study_hours" type="number" min="4" max="24" step="0.5" value="6" required>
+                <small>Between 4 and 24 hours</small>
+              </label>
+              <label class="field">
+                <span>Physical activity <em>hours / day</em></span>
+                <input name="physical_activity_hours" type="number" min="2" step="0.5" value="2" required>
+                <small>At least 2 hours</small>
+              </label>
+              <label class="field">
+                <span>Sleep <em>hours / night</em></span>
+                <input name="sleep_hours_per_night" type="number" min="6" max="10" step="0.5" value="8" required>
+                <small>Between 6 and 10 hours</small>
+              </label>
+              <label class="field">
+                <span>Current stress level</span>
+                <select name="stress_level" required>
+                  <option>Low</option>
+                  <option selected>Medium</option>
+                  <option>High</option>
+                  <option>Very High</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <p class="form-hint">There are no right or wrong answers.</p>
+            <button id="submit-button" type="submit">
+              <span class="button-label">Get my check-in</span>
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+          <p id="error-message" class="message error-message" role="alert" hidden></p>
+        </form>
+
+        <section id="result" class="result" aria-live="polite" hidden>
+          <div class="result-icon" aria-hidden="true">✦</div>
+          <p class="step-label">YOUR CHECK-IN RESULT</p>
+          <h2>Your predicted score</h2>
+          <p id="result-score" class="result-score"></p>
+          <p class="result-copy">This is a model-generated estimate based on the habits you shared. It isn't a diagnosis or a substitute for professional support.</p>
+          <button id="edit-answers" class="secondary-button" type="button">← Edit my answers</button>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <span>Made with care for student wellbeing</span>
+        <span>Take what you need. Leave the rest.</span>
+      </footer>
+    </main>
+  </body>
+</html>
